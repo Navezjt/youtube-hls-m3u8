@@ -1,0 +1,15 @@
+name: Deploy
+en:
+  Empuje:
+    Sucursales:
+      - principal
+Puestos de trabajo:
+  Implementar:
+    Se ejecuta: ubuntu-latest
+    name: Implementar en Cloudflare
+    Pasos:
+      - Usos: Acciones/checkout@v2
+      - name: Publicar como trabajador
+        Usos: Cloudflare/Wrangler-action@2.0.0
+        con:
+          apiToken: ${{ secretos. CF_API_TOKEN }}
